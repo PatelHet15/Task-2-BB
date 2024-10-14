@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> 
+    <title>Welcome to Wheels Up</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'logo.jpg' %}" alt="Wheels Up Logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'car_form' %}">Purchase Car</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="intro">
+        <h1>Welcome to Wheels Up!</h1>
+        <p>Your go-to platform for buying quality cars. Explore our range of vehicles and find the perfect fit for you!</p>
+        <p>At Wheels Up, we ensure a seamless purchasing experience with our extensive inventory and dedicated customer service.</p>
+    </div>
+
+    <div class="car-list">
+      <h2>Our Latest Purchases</h2>
+      {% if purchases %}
+          <table>
+              <thead>
+                  <tr>
+                      <th>Company</th>
+                      <th>Model</th>
+                      <th>Year</th>
+                      <th>Price (In Lacs)</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for purchase in purchases %}
+                      <tr>
+                          <td>{{ purchase.car.company }}</td>
+                          <td>{{ purchase.car.model }}</td>
+                          <td>{{ purchase.car.year }}</td>
+                          <td>{{ purchase.car.price }}</td>
+                      </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+      {% else %}
+          <p>You haven't purchased any car yet.</p>
+      {% endif %}
+  </div>
+  
+
+    <footer>
+        <p>&copy; 2024 Wheels Up. All rights reserved.</p>
+    </footer>
+</body>
+</html>

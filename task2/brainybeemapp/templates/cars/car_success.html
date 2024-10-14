@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Added Successfully</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Light grey background */
+            color: #444; 
+            display: flex; /* Center content */
+            flex-direction: column; /* Vertical layout */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            height: 100vh; /* Full viewport height */
+        }
+
+        h1 {
+            text-align: center; /* Center the title */
+            margin-bottom: 20px; /* Space below the title */
+            color: #000000; /* Black color for the title */
+        }
+
+        button {
+            padding: 10px 20px; /* Padding for buttons */
+            background-color: #000000; /* Black background for buttons */
+            color: white; /* White text on buttons */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Font size for buttons */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s, color 0.3s, border 0.3s; /* Smooth transition */
+        }
+
+        button:hover {
+          background-color: rgb(255, 255, 255); /* Red background on hover */
+          color: black; /* Black text on hover */
+          border: 3px solid black; /* 3px solid black border on hover */
+        }
+
+        .back-button {
+            margin-top: 20px; /* Space above the back button */
+        }
+
+        .back-button button:hover {
+          background-color: rgb(255, 255, 255); /* Red background on hover */
+          color: black; /* Black text on hover */
+          border: 3px solid black; /* 3px solid black border on hover */
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Car Added Successfully!</h1>
+    <div class="back-button">
+        <a href="{% url 'home' %}"><button>Back to Home</button></a>
+    </div>
+</body>
+</html>
